@@ -8,6 +8,7 @@
 import SwiftUI
 
 class LoginScreenViewModel:ObservableObject {
-    
+    @Published var username:String = ""
+    @Published var password:String = ""
 }
 
