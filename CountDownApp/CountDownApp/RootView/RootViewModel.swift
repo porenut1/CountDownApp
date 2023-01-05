@@ -8,5 +8,5 @@
 import SwiftUI
 
 class RootViewModel: ObservableObject {
-    
+    @Published var isLogged = false
 }

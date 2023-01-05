@@ -12,29 +12,36 @@ struct LoginScreen: View {
     @StateObject private var loginViewModel = LoginScreenViewModel()
     
     var body: some View {
-        VStack{
-            Text("Login")
-            Text("Please sign in to continue")
-            TextField("user", text: $loginViewModel.username)
-            SecureField("password", text: $loginViewModel.password)
-            Button(action: {
-                
-            }){
-                
-                   
-                    Text("Sing up")
-                    .foregroundColor(.white)
-                    .padding()
-                    .background( RoundedRectangle(cornerRadius: 20))
+        Text("test")
+        NavigationView{
+            VStack{
+                Text("Login")
+                Text("Please sign in to continue")
+                TextField("user", text: $loginViewModel.username)
+                SecureField("password", text: $loginViewModel.password)
+                Button(action: {
                     
-                
-            }
-            HStack{
-                Text("don't have an account")
-                Button(action: {}) {
-                    Text("Sign up")
+                }){
+                    
+                    NavigationLink(destination:RegistrationScreen() )
+                    {
+                        Text("Sing up")
+                        .foregroundColor(.white)
+                        .padding()
+                        .background( RoundedRectangle(cornerRadius: 20))
+                        
+                    }
+                        
+                    
+                }
+                HStack{
+                    Text("don't have an account")
+                    Button(action: {}) {
+                        Text("Sign up")
+                    }
                 }
             }
+            .background(Color.red)
         }
     }
 }
